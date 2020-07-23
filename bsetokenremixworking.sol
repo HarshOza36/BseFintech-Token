@@ -2,7 +2,7 @@
 pragma solidity >=0.4.0 <0.7.0;
 
 contract ERC20Simple {
-    function totalSupply() public view returns (uint256) {}
+    function totalSupply() external virtual view returns (uint256) {}
 
     function balanceOf(address _owner) public virtual view returns (uint256) {}
 
@@ -105,7 +105,7 @@ contract StandardToken is ERC20Simple {
 
     mapping(address => uint256) balances;
     mapping(address => mapping(address => uint256)) allowed;
-    uint256 public totalSupplyy;
+    uint256 public override totalSupply;
 }
 
 contract BSEToken is StandardToken {
@@ -122,7 +122,7 @@ contract BSEToken is StandardToken {
 
     function ERC20Token() public {
         balances[msg.sender] = 1000000000000000000; // Give the creator all initial tokens (100000 for example)
-        totalSupplyy = 100000; // Update total supply (100000 for example)
+        totalSupply = 100000; // Update total supply (100000 for example)
         name = "BSEToken"; // Set the name for display purposes
         decimals = 18; // Amount of decimals for display purposes
         symbol = "BSETok"; // Set the symbol for display purposes
