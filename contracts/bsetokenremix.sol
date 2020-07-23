@@ -124,7 +124,7 @@ contract BSEToken is StandardToken {
         balances[msg.sender] = 1000000000000000000; // Give the creator all initial tokens (100000 for example)
         totalSupply = 100000; // Update total supply (100000 for example)
         name = "BSEToken"; // Set the name for display purposes
-        decimals = 18; // Amount of decimals for display purposes
+        decimals = 6; // Amount of decimals for display purposes
         symbol = "BSETok"; // Set the symbol for display purposes
     }
 
